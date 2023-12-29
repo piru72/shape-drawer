@@ -1,0 +1,54 @@
+﻿using SplashKitSDK;
+
+namespace ShapeDrawer
+{
+
+    public abstract class Shape
+    {
+        private bool _selected;
+        private Color _color;
+        private float _x;
+        private float _y;
+
+
+        public bool Selected
+        {
+            get { return _selected; }
+            set { _selected = value; }
+        }
+
+        public Color Color
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
+
+        public float X
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+        public float Y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
+
+        public Shape() : this(Color.Violet) { }
+
+
+        public Shape(Color color)
+        {
+            Selected = false;
+            Color = color;
+            X = 0;
+            Y = 0;
+        }
+
+        public abstract void Draw();
+        public abstract void DrawOutline();
+        public abstract bool IsAt(Point2D pt);
+
+
+    }
+}
